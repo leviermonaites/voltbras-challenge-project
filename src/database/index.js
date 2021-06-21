@@ -1,0 +1,53 @@
+import { Sequelize } from "sequelize";
+import mysql from "mysql2/promise";
+
+import databaseConfig from "../config/database.js";
+
+import Station, { initStation } from "../models/Station.js";
+import User, { initUser } from "../models/User.js";
+import Recharge, { initRecharge } from "../models/Recharge.js";
+
+const initialize = async () => {
+  const { host, port, username: user, password, database } = databaseConfig;
+
+  try {
+    const connection = await mysql.createConnection({
+      host,
+      port,
+      user,
+      password,
+    });
+
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
+
+    // connect to db
+    const sequelize = new Sequelize(databaseConfig);
+
+    // Init Models
+    initStation(sequelize);
+    initUser(sequelize);
+    initRecharge(sequelize);
+
+    // Define relationships.
+    User.hasMany(Recharge, {
+      foreignKey: "user_id",
+    });
+    Recharge.belongsTo(User, {
+      foreignKey: "user_id",
+    });
+
+    Station.hasMany(Recharge, {
+      foreignKey: "station_id",
+    });
+    Recharge.belongsTo(Station, {
+      foreignKey: "station_id",
+    });
+
+    // sync all models with database
+    await sequelize.sync();
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+initialize();
