@@ -1,11 +1,15 @@
 # How to run the project
 
 I am assuming you have the two of the following things installed on your computer:
+
 Node.JS
+
 Docker - To use docker-compose
+
 MySQL Server
 
 Run "npm i" to install the required dependencies
+
 
 After that, you have to create a file called ".env" on the root folder. I would let it provided by default for you on the github repository, but just for make sure you know I'm somewhat keen on security stuff I did it like that.
 
