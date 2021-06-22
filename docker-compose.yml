@@ -28,6 +28,10 @@ services:
     ports:
       - "4000:4000"
     environment:
+      WAIT_HOSTS: mysql:3306
+      WAIT_HOSTS_TIMEOUT: 300
+      WAIT_SLEEP_INTERVAL: 30
+      WAIT_HOST_CONNECT_TIMEOUT: 30
       DATABASE: voltbras
       DATABASE_HOST: db
       DATABASE_PORT: 3306
