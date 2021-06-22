@@ -7,11 +7,11 @@ import Station, { initStation } from "../models/Station.js";
 import User, { initUser } from "../models/User.js";
 import Recharge, { initRecharge } from "../models/Recharge.js";
 
-const initialize = async () => {
+const initialize = () => {
   const { host, port, username: user, password, database } = databaseConfig;
 
   try {
-    setTimeout(() => {
+    setTimeout(async () => {
       // I'm using setTimeout to handle the first the mysql server turns on. I was trying to solve it with docker-compose-wait but didn't manage to do it successfully.
       const connection = await mysql.createConnection({
         host,
