@@ -23,6 +23,9 @@ const server = new ApolloServer({
   }),
 });
 
-server.listen().then(({ url }) => {
-  console.log(`Server ready at ${url}`);
-});
+setTimeout(async () => {
+  // I wrote the reason why I use the setTimeout on the database initialization.
+  server.listen().then(({ url }) => {
+    console.log(`Server ready at ${url}`);
+  });
+}, 7500);
