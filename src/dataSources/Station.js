@@ -21,6 +21,12 @@ class StationController {
 
     return data;
   }
+
+  async getStations() {
+    const data = await Station.findAll();
+    console.log(data);
+    return data;
+  }
 }
 
 export default StationController;

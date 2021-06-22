@@ -2,6 +2,8 @@ const resolvers = {
   Query: {
     suitablePlanets: (_, __, { dataSources }) =>
       dataSources.nasaAPI.getSuitablePlanets(),
+    stations: (_, __, { dataSources }) =>
+      dataSources.stationController.getStations(),
   },
 
   Mutation: {

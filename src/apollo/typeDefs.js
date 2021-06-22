@@ -31,6 +31,7 @@ const typeDefs = gql`
 
   type Query {
     suitablePlanets: [SuitablePlanet]
+    stations: [Station]
   }
 
   type Mutation {
