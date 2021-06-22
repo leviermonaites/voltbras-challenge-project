@@ -1,13 +1,5 @@
 version: '3.3'
 services:
-  apollo:
-    image: node
-    command: npm start
-    volumes:
-      - .:/usr/app/
-      - /usr/app/node_modules
-    ports:
-      - "4000:4000"
   db:
     image: mysql:8.0
     restart: always
@@ -21,13 +13,27 @@ services:
       MYSQL_ROOT_PASSWORD: '12345678*'
     ports:
       # <Port exposed> : < MySQL Port running inside container>
-      - '3307:3307'
+      - '3306:3306'
     expose:
       # Opens port 3306 on the container
-      - '3307'
+      - '3306'
       # Where our data will be persisted
     volumes:
       - my-db:/var/lib/mysql
+  apollo:
+    image: node
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE: voltbras
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
+      DATABASE_USERNAME: volt
+      DATABASE_PASSWORD: 12345678*
 # Names our volume
 volumes:
   my-db:

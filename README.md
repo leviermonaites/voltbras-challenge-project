@@ -18,19 +18,19 @@ There you can pull this git repository.
 
 Run "npm i" to install the required dependencies
 
-## Env File ##
-After that, you have to create a file called ".env" on the root folder. I would let it provided by default for you on the github repository, but just for make sure you know I'm somewhat keen on security stuff I did it like that.
+<!-- ## Env File ##
+After that, you have to create a file called ".env" on the root folder. I would let it provided by default for you on the github repository, but just for make sure you know I'm somewhat keen on security stuff I did it like that. -->
 
-You can put the following data there, or change according to your preferences:
+<!-- You can put the following data there, or change according to your preferences:
 DATABASE=voltbras
 DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_USERNAME=volt
-DATABASE_PASSWORD=12345678*
+DATABASE_PASSWORD=12345678* -->
 
 ## Docker
-You need to have the node image, to get it, you can paste the following on your terminal:
-docker pull node
+<!-- You need to have the node image, to get it, you can paste the following on your terminal:
+docker pull node -->
 
 Now you can run the following command:
 docker-compose up
