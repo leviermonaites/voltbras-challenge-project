@@ -2,15 +2,23 @@
 
 I am assuming you have the two of the following things installed on your computer:
 
-Node.JS
-
 Docker - To use docker-compose
 
-MySQL Server
+WSL or a Linux Distro - Prominently when it comes to absolute paths, it's going to help
+
+Node.JS on your WSL or Linux Distro
+
+
+## Let's begin ##
+Create a folder called 'app' on the 'usr' folder on the root path of your Linux Distro or WSL.
+So: the path to your folder should be something like this:
+  - /usr/app
+
+There you can pull this git repository.
 
 Run "npm i" to install the required dependencies
 
-
+## Env File ##
 After that, you have to create a file called ".env" on the root folder. I would let it provided by default for you on the github repository, but just for make sure you know I'm somewhat keen on security stuff I did it like that.
 
 You can put the following data there, or change according to your preferences:
@@ -20,11 +28,12 @@ DATABASE_PORT=3306
 DATABASE_USERNAME=volt
 DATABASE_PASSWORD=12345678*
 
-Now you can run the command in one terminal:
-'docker-compose up'
+## Docker
+You need to have the node image, to get it, you can paste the following on your terminal:
+docker pull node
 
-And in another - Make sure you are on the project's folder:
-'npm start'
+Now you can run the following command:
+docker-compose up
 
 On your browser you can type the url:
 http://localhost:4000/graphql
