@@ -1,13 +1,13 @@
 {
-  "name": "voltbras",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon ./src/server.js",
-    "start": "sucrase-node ./src/server.js"
+    "devStart": "nodemon /usr/app/src/server.js",
+    "start": "sucrase-node /usr/app/src/server.js"
   },
   "keywords": [],
   "author": "",
