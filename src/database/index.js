@@ -47,7 +47,7 @@ const initialize = () => {
 
       // sync all models with database
       await sequelize.sync();
-    }, 7500);
+    }, 45000);
   } catch (e) {
     console.log(e);
   }
