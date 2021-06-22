@@ -4,5 +4,5 @@ COPY package.json .
 RUN npm install
 RUN npm install sucrase nodemon
 COPY . .
-EXPOSE 3306
+EXPOSE 3308
 EXPOSE 4000

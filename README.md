@@ -1,22 +1,15 @@
 # How to run the project
 
-I am assuming you have the two of the following things installed on your computer:
+ - I am assuming you have docker installed your machine.
 
-Docker - To use docker-compose
-
-WSL or a Linux Distro - Prominently when it comes to absolute paths, it's going to help
-
-Node.JS on your WSL or Linux Distro
-
+<!-- Create a folder called 'app' on the 'usr' folder on the root path of your Linux Distro or WSL. -->
+<!-- So: the path to your folder should be something like this: -->
+  <!-- - /usr/app -->
 
 ## Let's begin ##
-Create a folder called 'app' on the 'usr' folder on the root path of your Linux Distro or WSL.
-So: the path to your folder should be something like this:
-  - /usr/app
+Pull the repository on a folder chosen by you
 
-There you can pull this git repository.
-
-Run "npm i" to install the required dependencies
+<!-- Run "npm i" to install the required dependencies -->
 
 <!-- ## Env File ##
 After that, you have to create a file called ".env" on the root folder. I would let it provided by default for you on the github repository, but just for make sure you know I'm somewhat keen on security stuff I did it like that. -->
@@ -31,7 +24,6 @@ DATABASE_PASSWORD=12345678* -->
 ## Docker
 <!-- You need to have the node image, to get it, you can paste the following on your terminal:
 docker pull node -->
-
 Now you can run the following command:
 docker-compose up
 
