@@ -29,10 +29,6 @@ services:
     ports:
       - "4000:4000"
     environment:
-      WAIT_HOSTS: db:3306
-      WAIT_TIMEOUT: 2
-      WAIT_SLEEP_INTERVAL: 4
-      WAIT_HOST_CONNECT_TIMEOUT: 6
       DATABASE: voltbras
       DATABASE_HOST: db
       DATABASE_PORT: 3306

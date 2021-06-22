@@ -11,12 +11,14 @@ const initialize = async () => {
   const { host, port, username: user, password, database } = databaseConfig;
 
   try {
+    setTimeout(() => { // I'm using setTimeout to handle the first the mysql server turns on. I was trying to solve it with docker-compose-wait but didn't manage to do it successfully.
     const connection = await mysql.createConnection({
       host,
       port,
       user,
       password,
     });
+
 
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
 
@@ -45,6 +47,7 @@ const initialize = async () => {
 
     // sync all models with database
     await sequelize.sync();
+  }, 2000);
   } catch (e) {
     console.log(e);
   }
