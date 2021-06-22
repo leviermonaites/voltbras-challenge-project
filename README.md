@@ -7,6 +7,18 @@
 Pull the repository on a folder chosen by you
 
 ## Docker
+We'll need to make use of an utility in order to help us to manage DATABASE failure connection which may happen when you're first running the application
+To install such utility, make sure you're running a terminal as an administrator
+
+First let's make sure we have our required package manager upgraded. 
+To do so on windows:
+  - c:\python39\python.exe -m pip install --upgrade pip
+
+To do so on Unix/MacOS
+  - apt-get install python3-pip
+
+Now, let's install the utility with the following command:
+  - pip install docker-compose-wait
 
 Now you can run the following command:
 *docker-compose up*
