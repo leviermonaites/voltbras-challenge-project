@@ -24,7 +24,6 @@ class StationController {
 
   async getStations() {
     const data = await Station.findAll();
-    console.log(data);
     return data;
   }
 }
